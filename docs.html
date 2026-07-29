@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags -->
+  <title>Documentation & Guide — BoneFish Roblox Enhancement Suite</title>
+  <meta name="description" content="Complete BoneFish documentation and guide. Learn how to install, configure, and get the most out of BoneFish — FPS unlocker, mods, FastFlags, multi-instance & more.">
+  <link rel="canonical" href="https://bonefishstudioo.vercel.app/docs.html">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bonefishstudioo.vercel.app/docs.html">
+  <meta property="og:title" content="Documentation & Guide — BoneFish Roblox Enhancement Suite">
+  <meta property="og:description" content="Complete BoneFish documentation and guide. Learn how to install, configure, and get the most out of BoneFish — FPS unlocker, mods, FastFlags, multi-instance & more.">
+  <meta property="og:image" content="https://bonefishstudioo.vercel.app/assets/og-image.png">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Documentation & Guide — BoneFish Roblox Enhancement Suite">
+  <meta name="twitter:description" content="Complete BoneFish documentation and guide. Learn how to install, configure, and get the most out of BoneFish.">
+  <meta name="twitter:image" content="https://bonefishstudioo.vercel.app/assets/og-image.png">
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "name": "BoneFish Documentation & Guide",
+    "description": "Complete documentation and guide for BoneFish Roblox enhancement suite.",
+    "url": "https://bonefishstudioo.vercel.app/docs.html",
+    "isPartOf": {
+      "@type": "SoftwareApplication",
+      "name": "BoneFish"
+    }
+  }
+  </script>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🐟</text></svg>">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-img">🐟</div>
+        BoneFish
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mods.html">Mods</a></li>
+        <li><a href="docs.html" class="active">Docs</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="https://github.com/BoneFishStudio/BoneFish/releases" class="nav-cta" target="_blank" rel="noopener">Download</a></li>
+      </ul>
+      <button class="nav-mobile-btn" id="mobileMenuBtn" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">🏠 Home</a>
+    <a href="mods.html">📦 Mods</a>
+    <a href="docs.html" class="active">📖 Docs</a>
+    <a href="donate.html">❤️ Donate</a>
+    <a href="https://github.com/BoneFishStudio/BoneFish/releases" target="_blank" rel="noopener">⬇️ Download</a>
+  </div>
+
+  <!-- Docs Layout -->
+  <div class="docs-layout">
+    <!-- Sidebar -->
+    <aside class="docs-sidebar">
+      <h3>Guide</h3>
+      <ul class="docs-nav">
+        <li><a href="#introduction" class="active">Introduction</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#first-launch">First Launch</a></li>
+        <li><a href="#features-guide">Features Guide</a></li>
+        <li><a href="#mods">Mods & Customization</a></li>
+        <li><a href="#fastflags">FastFlags</a></li>
+        <li><a href="#cleanup">Cleanup Tools</a></li>
+        <li><a href="#troubleshooting">Troubleshooting</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </aside>
+
+    <!-- Content -->
+    <main class="docs-content">
+      <h1>BoneFish Documentation</h1>
+      <p class="last-updated">Last updated: July 2026 · BoneFish v6.3.1</p>
+
+      <!-- Introduction -->
+      <section id="introduction">
+        <h2>🐟 Introduction</h2>
+        <p>BoneFish is a powerful, open-source enhancement suite for Roblox, forked from Bloxstrap. It provides a wide range of features designed to improve your Roblox experience — from FPS unlocking and multi-instance launching to deep customization through mods and FastFlags.</p>
+        
+        <div class="docs-tip">
+          <strong>💡 Open Source</strong> — BoneFish is completely free and open source. You can view, modify, and contribute to the code on <a href="https://github.com/BoneFishStudio/BoneFish" target="_blank" rel="noopener">GitHub</a>.
+        </div>
+
+        <h3>Key Highlights</h3>
+        <ul>
+          <li><strong>FPS Unlocker</strong> — Break the 60 FPS cap for smoother gameplay</li>
+          <li><strong>Multi-Instance</strong> — Run multiple Roblox accounts at once</li>
+          <li><strong>FastFlags Editor</strong> — Easy graphical FastFlag management</li>
+          <li><strong>Mod Support</strong> — Import community mods for cursors, fonts, sounds, themes</li>
+          <li><strong>Theme Engine</strong> — Fully customizable bootstrapper appearance</li>
+          <li><strong>Account Switcher</strong> — Cookie-based quick account switching</li>
+          <li><strong>Auto-Reconnect</strong> — Smart reconnection when disconnected</li>
+          <li><strong>Cache Cleaner</strong> — One-click Roblox cache cleanup</li>
+          <li><strong>Crosshair Overlay</strong> — Custom crosshair for any game</li>
+        </ul>
+      </section>
+
+      <!-- Installation -->
+      <section id="installation">
+        <h2>📥 Installation</h2>
+        
+        <h3>System Requirements</h3>
+        <ul>
+          <li>Windows 10 or later (64-bit)</li>
+          <li>.NET 9.0 Runtime (<a href="https://dotnet.microsoft.com/en-us/download/dotnet/9.0" target="_blank" rel="noopener">download here</a>)</li>
+          <li>Roblox installed</li>
+        </ul>
+
+        <h3>Quick Install</h3>
+        <ol>
+          <li>Download the latest <code>BoneFish.exe</code> from the <a href="https://github.com/BoneFishStudio/BoneFish/releases" target="_blank" rel="noopener">Releases page</a></li>
+          <li>Run <code>BoneFish.exe</code> — it will automatically install and configure itself</li>
+          <li>Launch Roblox through BoneFish to enable all features</li>
+        </ol>
+
+        <h3>Portable Mode</h3>
+        <p>Place <code>BoneFish.exe</code> in any folder and run it. All settings and data are stored in a <code>BoneFish</code> folder next to the executable.</p>
+
+        <h3>Updating</h3>
+        <p>BoneFish automatically checks for updates on launch. You can also manually download the latest version from the <a href="https://github.com/BoneFishStudio/BoneFish/releases" target="_blank" rel="noopener">Releases page</a>.</p>
+      </section>
+
+      <!-- First Launch -->
+      <section id="first-launch">
+        <h2>🚀 First Launch</h2>
+        <p>When you first run BoneFish, you'll see the setup wizard. Here's what to expect:</p>
+        <ol>
+          <li><strong>Install Location</strong> — Choose where BoneFish stores its data</li>
+          <li><strong>Bootstrapper Style</strong> — Pick a theme for the Roblox bootstrapper</li>
+          <li><strong>FastFlags</strong> — Choose performance presets (FPS unlock, etc.)</li>
+          <li><strong>Integrations</strong> — Configure Discord Rich Presence, activity watcher</li>
+        </ol>
+        <p>After setup, right-click the BoneFish icon in your system tray to access all features.</p>
+        
+        <div class="docs-tip">
+          <strong>💡 System Tray</strong> — BoneFish runs in the system tray. Right-click the 🐟 icon to open settings, switch accounts, or launch Roblox.
+        </div>
+      </section>
+
+      <!-- Features Guide -->
+      <section id="features-guide">
+        <h2>⚙️ Features Guide</h2>
+
+        <h3>🎮 Multi-Instance Launcher</h3>
+        <p>BoneFish allows you to run multiple Roblox accounts simultaneously. Each instance runs independently with its own settings.</p>
+        <ul>
+          <li>Enable in Settings → Integrations → Activity Watcher</li>
+          <li>Each instance can have different FastFlags profiles</li>
+          <li>Smart window management prevents focus stealing</li>
+        </ul>
+
+        <h3>⚡ FPS Unlocker</h3>
+        <p>Unlock Roblox's FPS cap for smoother gameplay. The unlocker is built into BoneFish's FastFlags system.</p>
+        <ul>
+          <li>Enable via Settings → FastFlags → FPS Unlocker</li>
+          <li>Set your target FPS (default: 144, max: 999)</li>
+          <li>Real-time FPS counter available (Ctrl+F toggles)</li>
+        </ul>
+
+        <h3>🔄 Auto-Reconnect</h3>
+        <p>Never lose progress again! BoneFish automatically detects disconnections and reconnects you to the server.</p>
+        <ul>
+          <li>Works with all Roblox games</li>
+          <li>Configurable retry count and delay</li>
+          <li>Only reconnects if within timeout window</li>
+        </ul>
+
+        <h3>🔑 Account Switcher</h3>
+        <p>Quickly switch between Roblox accounts using cookie-based management.</p>
+        <ul>
+          <li>Add cookies via Settings → Account Switcher</li>
+          <li>Switch accounts from system tray menu</li>
+          <li>Per-account settings preservation</li>
+        </ul>
+
+        <h3>🎯 Crosshair Overlay</h3>
+        <p>Customizable crosshair overlay for any Roblox game — especially useful for FPS games.</p>
+        <ul>
+          <li>Multiple crosshair styles (dot, cross, circle, custom)</li>
+          <li>Adjustable color, size, opacity</li>
+          <li>Toggle with hotkey (default: Ctrl+Shift+C)</li>
+        </ul>
+      </section>
+
+      <!-- Mods -->
+      <section id="mods">
+        <h2>📦 Mods & Customization</h2>
+        <p>BoneFish supports community-created mods to customize your Roblox experience. Mods can include custom cursors, fonts, sounds, UI themes, and more.</p>
+
+        <h3>Installing Mods</h3>
+        <ol>
+          <li>Download a mod <code>.zip</code> from the <a href="mods.html">Mod Database</a> or community</li>
+          <li>Open BoneFish Settings → Mods → Import Mod Package</li>
+          <li>Select the <code>.zip</code> file</li>
+          <li>Review the files that will be added/overwritten</li>
+          <li>Confirm to install</li>
+        </ol>
+
+        <div class="docs-tip">
+          <strong>💡 Valid Mod Structure</strong> — Mods must contain files in these folders: <code>content/</code> (textures, sounds, fonts), <code>ExtraContent/</code> (additional assets), or <code>ClientSettings/</code> (FastFlag overrides).
+        </div>
+
+        <h3>Official Mod Collections</h3>
+        <ul>
+          <li><a href="mods.html">Community Mod Database</a> — Browse all community mods</li>
+          <li><strong>Old Avatar Background</strong> — Restores the classic avatar background</li>
+          <li><strong>Twemoji Font Pack</strong> — HD emoji replacement pack</li>
+          <li><strong>Fluent Cursor Pack</strong> — Modern Fluent Design cursors</li>
+          <li><strong>Crosshair Pack</strong> — 100+ crosshair overlays</li>
+        </ul>
+
+        <h3>Creating Mods</h3>
+        <p>To create your own mod:</p>
+        <ol>
+          <li>Create the folder structure: <code>content/textures/</code>, <code>content/sounds/</code>, <code>content/fonts/</code>, or <code>ClientSettings/</code></li>
+          <li>Place your custom files in the appropriate folders</li>
+          <li>Zip everything and share with the community!</li>
+        </ol>
+      </section>
+
+      <!-- FastFlags -->
+      <section id="fastflags">
+        <h2>⚙️ FastFlags Manager</h2>
+        <p>FastFlags control Roblox's internal settings. BoneFish provides a graphical editor to safely modify them.</p>
+
+        <div class="docs-warning">
+          <strong>⚠️ Caution</strong> — Some FastFlags can affect stability or performance. BoneFish marks experimental flags and provides descriptions for each.
+        </div>
+
+        <h3>Common FastFlags</h3>
+        <ul>
+          <li><code>FPSUnlocker</code> — Disables FPS cap</li>
+          <li><code>DisableTextureQualityDrop</code> — Keeps textures at max quality</li>
+          <li><code>FFlagDebugDisableTeleportation</code> — Debug teleport features</li>
+          <li><code>DFIntTaskSchedulerTargetFps</code> — Target FPS value</li>
+        </ul>
+
+        <p>Access FastFlags via Settings → FastFlags. You can search, edit, add, and remove flags through the built-in editor.</p>
+      </section>
+
+      <!-- Cleanup -->
+      <section id="cleanup">
+        <h2>🧹 Cleanup Tools</h2>
+        <p>BoneFish includes independent cleanup tools for Roblox Player and Studio installations.</p>
+
+        <h3>Clean Roblox Player</h3>
+        <p>Removes Roblox Player data including:</p>
+        <ul>
+          <li>Player binaries and version directories</li>
+          <li>Registry keys (roblox, roblox-player)</li>
+          <li>Shared log and cache files</li>
+        </ul>
+
+        <h3>Clean Roblox Studio</h3>
+        <p>Removes Roblox Studio data including:</p>
+        <ul>
+          <li>Studio binaries and version directories</li>
+          <li>Registry keys (roblox-studio, roblox-studio-auth, Roblox.Place)</li>
+          <li>File associations (.rbxl, .rbxlx)</li>
+          <li>Shared log and cache files</li>
+        </ul>
+
+        <div class="docs-danger">
+          <strong>🔴 Destructive Action</strong> — Data cleaned cannot be recovered. BoneFish installation will not be affected. Available in Settings → Channel/Deployment page.
+        </div>
+      </section>
+
+      <!-- Troubleshooting -->
+      <section id="troubleshooting">
+        <h2>🔧 Troubleshooting</h2>
+
+        <h3>BoneFish won't start</h3>
+        <ul>
+          <li>Ensure .NET 9.0 Runtime is installed</li>
+          <li>Check Windows Defender/antivirus isn't blocking it</li>
+          <li>Run as Administrator</li>
+          <li>Delete the <code>BoneFish</code> settings folder and reinstall</li>
+        </ul>
+
+        <h3>FPS unlocker not working</h3>
+        <ul>
+          <li>Verify FastFlags are applied (check in FastFlags editor)</li>
+          <li>Try restarting Roblox after enabling</li>
+          <li>Check if V-Sync is enabled in your GPU driver</li>
+        </ul>
+
+        <h3>Mod not showing up</h3>
+        <ul>
+          <li>Ensure the ZIP has proper structure (<code>content/</code>, <code>ExtraContent/</code>, or <code>ClientSettings/</code>)</li>
+          <li>Try re-importing the mod</li>
+          <li>Check the Mods page in settings to see active mods</li>
+        </ul>
+
+        <h3>Multi-instance not working</h3>
+        <ul>
+          <li>Enable Activity Watcher in Settings → Integrations</li>
+          <li>Launch each instance separately from the system tray</li>
+          <li>Some anti-cheat systems may block multiple instances</li>
+        </ul>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq">
+        <h2>❓ FAQ</h2>
+
+        <h3>Is BoneFish safe?</h3>
+        <p>Yes! BoneFish is completely open source (check our <a href="https://github.com/BoneFishStudio/BoneFish" target="_blank" rel="noopener">GitHub</a>). It doesn't modify Roblox memory or inject code. It only modifies configuration files and bootstrapper behavior, which is against Roblox ToS? No, BoneFish works with Roblox's official bootstrapper.</p>
+
+        <h3>Will I get banned?</h3>
+        <p>BoneFish does not modify Roblox binaries or memory. It's considered a "tool assisted" enhancement. However, use at your own risk for features like FPS unlocking in competitive games.</p>
+
+        <h3>Is BoneFish free?</h3>
+        <p>Yes, completely free and open source. If you'd like to support development, consider <a href="donate.html">donating</a>.</p>
+
+        <h3>Can I use BoneFish with other mods/launchers?</h3>
+        <p>BoneFish is compatible with most Roblox mods. However, using multiple enhancers simultaneously may cause conflicts. We recommend using BoneFish as your primary enhancement tool.</p>
+
+        <h3>How do I report a bug?</h3>
+        <p>Open an issue on our <a href="https://github.com/BoneFishStudio/BoneFish/issues" target="_blank" rel="noopener">GitHub Issues page</a> or ask in our <a href="https://discord.gg/bonefish" target="_blank" rel="noopener">Discord server</a>.</p>
+
+        <h3>Can I contribute?</h3>
+        <p>Absolutely! Check our <a href="https://github.com/BoneFishStudio/BoneFish/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contributing Guide</a> on GitHub. We welcome PRs, bug reports, and feature suggestions.</p>
+      </section>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="nav-logo-img">🐟</div>
+            BoneFish
+          </a>
+          <p>The ultimate Roblox enhancement suite. Open source, community-driven, and always improving.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="mods.html">Mod Database</a></li>
+            <li><a href="docs.html">Documentation</a></li>
+            <li><a href="https://github.com/BoneFishStudio/BoneFish/releases">Releases</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="https://discord.gg/bonefish" target="_blank" rel="noopener">Discord</a></li>
+            <li><a href="https://github.com/BoneFishStudio/BoneFish/discussions" target="_blank" rel="noopener">GitHub Discussions</a></li>
+            <li><a href="mods.html">Submit Mod</a></li>
+            <li><a href="https://github.com/BoneFishStudio/BoneFish/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contribute</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="docs.html">FAQ</a></li>
+            <li><a href="https://github.com/BoneFishStudio/BoneFish/issues" target="_blank" rel="noopener">Report Issue</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="https://github.com/BoneFishStudio/BoneFish" target="_blank" rel="noopener">Source Code</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 BoneFish Studio. Not affiliated with Roblox Corporation.</span>
+        <div class="footer-socials">
+          <a href="https://github.com/BoneFishStudio" target="_blank" rel="noopener" title="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a>
+          <a href="https://discord.gg/bonefish" target="_blank" rel="noopener" title="Discord"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028 14.09 14.09 0 001.226-1.994.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg></a>
+          <a href="https://twitter.com/BoneFishStudio" target="_blank" rel="noopener" title="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags -->
+  <title>BoneFish — Ultimate Roblox Enhancement Suite for Windows</title>
+  <meta name="description" content="BoneFish: open-source Roblox enhancement suite for Windows. FPS unlocker, FastFlags manager, mod support, theme engine, and more. Free download.">
+  <link rel="canonical" href="https://bonefishstudioo.vercel.app/">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bonefishstudioo.vercel.app/">
+  <meta property="og:title" content="BoneFish — Ultimate Roblox Enhancement Suite for Windows">
+  <meta property="og:description" content="BoneFish: open-source Roblox enhancement suite for Windows. FPS unlocker, FastFlags manager, mod support, theme engine, and more. Free download.">
+  <meta property="og:image" content="https://bonefishstudioo.vercel.app/assets/og-image.png">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BoneFish — Ultimate Roblox Enhancement Suite for Windows">
+  <meta name="twitter:description" content="BoneFish: open-source Roblox enhancement suite for Windows. FPS unlocker, FastFlags manager, mod support, theme engine, and more. Free download.">
+  <meta name="twitter:image" content="https://bonefishstudioo.vercel.app/assets/og-image.png">
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "BoneFish",
+    "description": "BoneFish: open-source Roblox enhancement suite for Windows. FPS unlocker, FastFlags manager, mod support, theme engine, and more.",
+    "operatingSystem": "Windows 10/11",
+    "applicationCategory": "UtilityApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "downloadUrl": "https://github.com/BoneFishStudio/BoneFish/releases",
+    "author": {
+      "@type": "Organization",
+      "name": "BoneFish Studio"
+    }
+  }
+  </script>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🐟</text></svg>">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-img">🐟</div>
+        BoneFish
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="mods.html">Mods</a></li>
+        <li><a href="docs.html">Docs</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="https://github.com/BoneFishStudio/BoneFish/releases" class="nav-cta" target="_blank" rel="noopener">Download</a></li>
+      </ul>
+      <button class="nav-mobile-btn" id="mobileMenuBtn" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html" class="active">🏠 Home</a>
+    <a href="mods.html">📦 Mods</a>
+    <a href="docs.html">📖 Docs</a>
+    <a href="donate.html">❤️ Donate</a>
+    <a href="https://github.com/BoneFishStudio/BoneFish/releases" target="_blank" rel="noopener">⬇️ Download</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-bg-gradient"></div>
+      <div class="hero-grid"></div>
+      <div class="hero-particles" id="particles"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        v6.3.1 — Latest Release
+      </div>
+      <h1>Elevate Your Roblox<br>Experience</h1>
+      <p class="hero-subtitle">
+        BoneFish is the ultimate Roblox enhancement suite — FPS unlocker, FastFlags manager, 
+        multi-instance launcher, theme engine, and a thriving mod community ecosystem.
+      </p>
+      <div class="hero-actions">
+        <a href="https://github.com/BoneFishStudio/BoneFish/releases" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+          ⬇️ Download Now
+        </a>
+        <a href="docs.html" class="btn btn-secondary btn-lg">
+          📖 Learn More
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-value" data-count="12">0</div>
+          <div class="hero-stat-label">K+ Downloads</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value" data-count="50">0</div>
+          <div class="hero-stat-label">Community Mods</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value" data-count="25">0</div>
+          <div class="hero-stat-label">Features</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value" data-count="99">0</div>
+          <div class="hero-stat-label">% Uptime</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll to explore</span>
+      <div class="hero-scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section" id="features">
+    <div class="section-header reveal">
+      <span class="section-tag">Features</span>
+      <h2 class="section-title">Why BoneFish?</h2>
+      <p class="section-desc">Everything you need to enhance, customize, and optimize your Roblox experience in one powerful app.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon">🎮</div>
+        <h3>Multi-Instance Launcher</h3>
+        <p>Run multiple Roblox accounts simultaneously with smart window management and per-instance settings.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon">⚡</div>
+        <h3>FPS Unlocker</h3>
+        <p>Break past Roblox's 60 FPS cap for buttery-smooth gameplay. Real-time FPS counter included.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon">🎨</div>
+        <h3>Theme Engine</h3>
+        <p>Customize every pixel with built-in dark/light themes, custom bootstrapper styles, and community themes.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon">🏴‍☠️</div>
+        <h3>FastFlags Manager</h3>
+        <p>Full graphical editor for Roblox FastFlags. Enable FPS unlock, performance tweaks, and hidden features.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon">📦</div>
+        <h3>Mod Support</h3>
+        <p>Import community mods with one click. Custom cursors, fonts, sounds, UI themes, and more.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon">🔄</div>
+        <h3>Auto-Reconnect</h3>
+        <p>Never lose progress with smart reconnection. Auto-join back to servers when disconnected.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon">🔒</div>
+        <h3>Account Switcher</h3>
+        <p>Quickly switch between Roblox accounts with cookie-based management. No more logging in repeatedly.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon">🎯</div>
+        <h3>Crosshair Overlay</h3>
+        <p>Customizable crosshair overlay for any game. Multiple styles, colors, and opacity settings.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon">🧹</div>
+        <h3>Cache Cleaner</h3>
+        <p>One-click Roblox cache cleaning. Free up gigabytes of disk space and fix common issues.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mods Preview Section -->
+  <section class="section" style="background: var(--bg-secondary); max-width: none;">
+    <div class="" style="max-width:var(--max-width);margin:0 auto;">
+      <div class="section-header reveal">
+        <span class="section-tag">Community</span>
+        <h2 class="section-title">Popular Mods</h2>
+        <p class="section-desc">Thousands of community-created mods. Custom cursors, HD fonts, immersive sound packs, and more.</p>
+      </div>
+      <div class="mods-showcase-grid" id="featuredMods">
+        <div class="loading"><div class="spinner"></div></div>
+      </div>
+      <div class="text-center mt-8 reveal">
+        <a href="mods.html" class="btn btn-secondary">Browse All Mods →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Section -->
+  <section class="section download-section" style="max-width: none;">
+    <div class="download-content reveal">
+      <div class="download-version">🐟 BoneFish v6.3.1</div>
+      <h2 class="section-title">Ready to Enhance Your Roblox?</h2>
+      <p class="section-desc">Download the latest version for Windows. Portable, no bloatware, open source.</p>
+      <div class="download-buttons">
+        <a href="https://github.com/BoneFishStudio/BoneFish/releases/download/v6.3.1/BoneFish.exe" class="btn btn-primary btn-lg">
+          ⬇️ Download for Windows
+        </a>
+        <a href="https://github.com/BoneFishStudio/BoneFish/releases" class="btn btn-secondary btn-lg" target="_blank" rel="noopener">
+          📋 View Changelog
+        </a>
+      </div>
+      <div class="download-info">
+        <p>Open source on <a href="https://github.com/BoneFishStudio/BoneFish" target="_blank" rel="noopener">GitHub</a> · 
+          Built with WPF UI · 
+          <a href="docs.html">Installation Guide</a> · 
+          <a href="https://github.com/BoneFishStudio/BoneFish/releases">All Releases</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Donate Section -->
+  <section class="section donate-section" style="max-width: none;">
+    <div class="donate-content reveal">
+      <div class="donate-icon">💝</div>
+      <h2>Support BoneFish Development</h2>
+      <p>Your donations keep BoneFish free, ad-free, and constantly improving. Every contribution helps cover hosting, domain, and development costs.</p>
+      <a href="http://tako.id/SiMahiro/gift" class="donate-btn" target="_blank" rel="noopener">
+        💝 Donate Now
+      </a>
+      <div class="donate-methods">
+        <a href="https://github.com/sponsors/BoneFishStudio" class="donate-method" target="_blank" rel="noopener">💖 GitHub Sponsors</a>
+        <a href="https://saweria.co/BoneFish" class="donate-method" target="_blank" rel="noopener">☕ Saweria</a>
+        <a href="https://trakteer.id/BoneFish" class="donate-method" target="_blank" rel="noopener">🎯 Trakteer</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="nav-logo-img">🐟</div>
+            BoneFish
+          </a>
+          <p>The ultimate Roblox enhancement suite. Open source, community-driven, and always improving.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="mods.html">Mod Database</a></li>
+            <li><a href="docs.html">Documentation</a></li>
+            <li><a href="https://github.com/BoneFishStudio/BoneFish/releases">Releases</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="https://discord.gg/bonefish" target="_blank" rel="noopener">Discord</a></li>
+            <li><a href="https://github.com/BoneFishStudio/BoneFish/discussions" target="_blank" rel="noopener">GitHub Discussions</a></li>
+            <li><a href="mods.html">Submit Mod</a></li>
+            <li><a href="https://github.com/BoneFishStudio/BoneFish/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contribute</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="docs.html">FAQ</a></li>
+            <li><a href="https://github.com/BoneFishStudio/BoneFish/issues" target="_blank" rel="noopener">Report Issue</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="https://github.com/BoneFishStudio/BoneFish" target="_blank" rel="noopener">Source Code</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 BoneFish Studio. Not affiliated with Roblox Corporation.</span>
+        <div class="footer-socials">
+          <a href="https://github.com/BoneFishStudio" target="_blank" rel="noopener" title="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://discord.gg/bonefish" target="_blank" rel="noopener" title="Discord">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028 14.09 14.09 0 001.226-1.994.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+          </a>
+          <a href="https://twitter.com/BoneFishStudio" target="_blank" rel="noopener" title="Twitter">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
