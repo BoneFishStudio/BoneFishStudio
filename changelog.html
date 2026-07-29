@@ -720,6 +720,26 @@
         if (refreshBtn) refreshBtn.disabled = true;
         setStatus('Loading releases...', 'loading');
 
+        // Try cache first
+        var cached = null;
+        try {
+          var cachedRaw = localStorage.getItem('bonefish_releases');
+          if (cachedRaw) {
+            var parsed = JSON.parse(cachedRaw);
+            // Cache valid for 30 minutes
+            if (Date.now() - parsed.ts < 30 * 60 * 1000 && !manual) {
+              cached = parsed.data;
+            }
+          }
+        } catch(e) { /* ignore cache errors */ }
+
+        if (cached) {
+          renderReleases(cached);
+          setStatus('Loaded ' + cached.length + ' releases (cached)');
+          if (refreshBtn) refreshBtn.disabled = false;
+          return;
+        }
+
         fetch('https://api.github.com/repos/BoneFishStudio/BoneFish/releases?per_page=20')
           .then(function(res) {
             if (!res.ok) throw new Error('HTTP ' + res.status);
@@ -728,21 +748,36 @@
           .then(function(data) {
             if (!Array.isArray(data)) throw new Error('Invalid response');
             renderReleases(data);
-            const count = data.length;
+            // Save to cache
+            try {
+              localStorage.setItem('bonefish_releases', JSON.stringify({ ts: Date.now(), data: data }));
+            } catch(e) { /* ignore storage errors */ }
+            var count = data.length;
             setStatus('Loaded ' + count + ' release' + (count !== 1 ? 's' : '') + ' from GitHub' + (manual ? ' (refreshed)' : ''));
             if (refreshBtn) refreshBtn.disabled = false;
           })
           .catch(function(err) {
             console.error('Failed to fetch releases:', err);
-            setStatus('Failed to load releases. ' + (manual ? 'Try again later.' : 'Showing cached data.'), 'error');
-            // Show fallback/error state
-            timeline.innerHTML = `
-              <div class="release-empty-state">
-                <div class="empty-icon">⚠️</div>
-                <h3>Could not load releases</h3>
-                <p>${err.message}. Please visit the <a href="https://github.com/BoneFishStudio/BoneFish/releases" target="_blank" rel="noopener">GitHub Releases page</a> directly.</p>
-              </div>
-            `;
+            // Try to show stale cache as fallback
+            var staleCache = null;
+            try {
+              var cachedRaw = localStorage.getItem('bonefish_releases');
+              if (cachedRaw) staleCache = JSON.parse(cachedRaw).data;
+            } catch(e) { /* ignore */ }
+
+            if (staleCache) {
+              renderReleases(staleCache);
+              setStatus('Showing cached data (could not refresh)', 'error');
+            } else {
+              setStatus('Failed to load releases', 'error');
+              timeline.innerHTML = '
+                <div class="release-empty-state">
+                  <div class="empty-icon">⚠️</div>
+                  <h3>Could not load releases</h3>
+                  <p>' + err.message.replace(/</g, '&lt;') + '. Please visit the <a href="https://github.com/BoneFishStudio/BoneFish/releases" target="_blank" rel="noopener">GitHub Releases page</a> directly.</p>
+                </div>
+              ';
+            }
             if (refreshBtn) refreshBtn.disabled = false;
           });
       }
