@@ -770,13 +770,8 @@
               setStatus('Showing cached data (could not refresh)', 'error');
             } else {
               setStatus('Failed to load releases', 'error');
-              timeline.innerHTML = '
-                <div class="release-empty-state">
-                  <div class="empty-icon">⚠️</div>
-                  <h3>Could not load releases</h3>
-                  <p>' + err.message.replace(/</g, '&lt;') + '. Please visit the <a href="https://github.com/BoneFishStudio/BoneFish/releases" target="_blank" rel="noopener">GitHub Releases page</a> directly.</p>
-                </div>
-              ';
+              var errMsg = err.message.replace(/</g, '&lt;');
+              timeline.innerHTML = '<div class="release-empty-state"><div class="empty-icon">⚠️</div><h3>Could not load releases</h3><p>' + errMsg + '. Please visit the <a href="https://github.com/BoneFishStudio/BoneFish/releases" target="_blank" rel="noopener">GitHub Releases page</a> directly.</p></div>';
             }
             if (refreshBtn) refreshBtn.disabled = false;
           });

@@ -2,6 +2,9 @@
    BONEFISH — Complete Website Stylesheet
    ============================================================ */
 
+/* Google Fonts - Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 /* --- CSS Variables --- */
 :root {
   --bg-primary: #0a0e17;
@@ -37,7 +40,7 @@
   --shadow-lg: 0 8px 48px rgba(0, 0, 0, 0.5);
   --shadow-glow: 0 0 40px var(--accent-glow);
   
-  --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', monospace;
   
   --nav-height: 72px;
