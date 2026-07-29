@@ -1,7 +1,6 @@
 {
   "name": "bonefish-website",
   "version": 2,
-  "public": true,
   "buildCommand": null,
   "outputDirectory": ".",
   "framework": null,
