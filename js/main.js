@@ -9,27 +9,70 @@
   // 1. MOD DATABASE
   // ============================================================
 
+  // Only list assets with a public, verifiable source. Download counts, versions,
+  // and dates are intentionally omitted when the source does not publish them.
   const MODS = [
-    { id: 1, name: 'Bloxstrap Cursor Pack', category: 'cursor', author: 'pizzaboxer', downloads: 45700, version: '2.5', icon: '🖱️', preview: '#0ea5e9', files: ['content/textures/Cursors/ArrowCursor.png','content/textures/Cursors/PointerCursor.png','content/textures/Cursors/IBeamCursor.png','content/textures/Cursors/WaitCursor.png'], desc: 'Original cursor pack from Bloxstrap project. Clean, high-quality cursor replacements inspired by Fluent Design. Compatible with all Roblox versions.', github: 'https://github.com/pizzaboxer/bloxstrap', date: '2026-07-15' },
-    { id: 2, name: 'Twemoji Font Pack', category: 'font', author: 'twitter/twemoji', downloads: 28400, version: '15.0', icon: '🔤', preview: '#8b5cf6', files: ['content/fonts/TwemojiMozilla.ttf','content/fonts/families/Twemoji.json'], desc: 'HD emoji replacement using Twemoji (Twitter Emoji) by Twitter/Mozilla. Replaces Roblox default emoji with crisp Twitter-style emoji. Open source under CC-BY 4.0.', github: 'https://github.com/twitter/twemoji', date: '2026-07-10' },
-    { id: 3, name: 'Old Avatar Background', category: 'place', author: 'pizzaboxer', downloads: 9200, version: '1.2', icon: '🏗️', preview: '#10b981', files: ['ExtraContent/places/OldAvatarBackground.rbxl'], desc: 'Restores the classic pre-2022 avatar background place by pizzaboxer. Includes iconic blue gradient backdrop with original lighting for avatar showcases.', github: 'https://github.com/pizzaboxer/bloxstrap', date: '2026-05-28' },
-    { id: 4, name: 'V3 Dark Theme', category: 'theme', author: 'devforum/roblox', downloads: 22300, version: '3.2', icon: '🎨', preview: '#1e293b', files: ['content/textures/UI/DarkTheme.png','content/textures/UI/DarkButton.png','content/textures/UI/DarkPanel.png','ClientSettings/ClientAppSettings.json'], desc: 'Complete dark UI theme from Roblox developer community. Overhauls all in-game menus with a sleek dark theme. Includes optimized FastFlags for dark mode.', github: 'https://devforum.roblox.com/', date: '2026-06-28' },
-    { id: 5, name: 'Rovolution Crosshair Pack', category: 'crosshair', author: 'discord/roblox-cheat', downloads: 32100, version: '5.0', icon: '🎯', preview: '#ef4444', files: ['content/textures/Crosshairs/Default.png','content/textures/Crosshairs/Dot.png','content/textures/Crosshairs/Cross.png','content/textures/Crosshairs/Circle.png','content/textures/Crosshairs/T.png'], desc: 'Premium crosshair collection from the Roblox modding community. 100+ designs for FPS games including dot, cross, circle, T-shape variants.', github: 'https://github.com/search?q=roblox+crosshair+mod', date: '2026-06-25' },
-    { id: 6, name: 'RbxAudio Enhanced Pack', category: 'sound', author: 'r/rblxmodding', downloads: 18300, version: '2.3', icon: '🔊', preview: '#f59e0b', files: ['content/sounds/footstep_plastic.mp3','content/sounds/jump_effect.mp3','content/sounds/land_effect.mp3','content/sounds/ui_click.mp3'], desc: 'High-quality sound replacements from the Roblox modding subreddit community. Crisp audio samples for footsteps, jumps, UI interactions.', github: 'https://www.reddit.com/r/robloxmodding/', date: '2026-06-18' },
-    { id: 7, name: '64x HD GUI Textures', category: 'ui', author: 'bloxstrap-community', downloads: 7400, version: '2.0', icon: '🖥️', preview: '#06b6d4', files: ['content/textures/UI/ButtonHD.png','content/textures/UI/PanelHD.png','content/textures/UI/IconHD.png','content/textures/UI/CheckboxHD.png'], desc: 'High-resolution 64x GUI textures from the Bloxstrap community. Upgrades all Roblox UI to double resolution for sharper visuals on high-DPI displays.', github: 'https://github.com/pizzaboxer/bloxstrap/discussions', date: '2026-07-20' },
-    { id: 8, name: 'Rubik Font Family', category: 'font', author: 'Google Fonts', downloads: 11200, version: '2.0', icon: '🔤', preview: '#ec4899', files: ['content/fonts/Rubik-Regular.ttf','content/fonts/Rubik-Bold.ttf','content/fonts/Rubik-Italic.ttf','content/fonts/families/Rubik.json'], desc: 'Modern Rubik font family by Google Fonts. Clean, geometric sans-serif typeface in regular, bold, and italic. Licensed under Open Font License.', github: 'https://fonts.google.com/specimen/Rubik', date: '2026-06-05' },
-    { id: 9, name: 'Classic 2006 Cursors', category: 'cursor', author: 'roblox-archive', downloads: 6300, version: '1.0', icon: '🖱️', preview: '#84cc16', files: ['content/textures/Cursors/2006Arrow.png','content/textures/Cursors/2006Pointer.png','content/textures/Cursors/2006Text.png','content/textures/Cursors/2006Busy.png'], desc: 'Original Roblox 2006-era cursor designs archived by the community. Nostalgic classic cursors from Roblox early days. Preserved for historical accuracy.', github: 'https://github.com/roblox-archive', date: '2026-07-15' },
-    { id: 10, name: 'FPS Unlocker FastFlags', category: 'flag', author: 'pizzaboxer/maximumadhd', downloads: 58200, version: '7.0', icon: '⚙️', preview: '#6366f1', files: ['ClientSettings/ClientAppSettings.json'], desc: 'Community-standard FPS unlock FastFlag presets. Originally by maximumadhd, maintained by Bloxstrap team. Includes FPS unlock, texture optimization, input lag reduction.', github: 'https://github.com/pizzaboxer/bloxstrap', date: '2026-07-28' },
-    { id: 11, name: 'Noto Sans Thai Font', category: 'font', author: 'Google Fonts', downloads: 3400, version: '1.0', icon: '🔤', preview: '#a855f7', files: ['content/fonts/NotoSansThai-VariableFont_wdth,wght.ttf','content/fonts/families/NotoSansThai.json'], desc: 'Noto Sans Thai by Google Fonts with proper Thai Unicode support. Essential for Thai-language Roblox players. Part of the Noto font family.', github: 'https://fonts.google.com/noto/specimen/Noto+Sans+Thai', date: '2026-07-20' },
-    { id: 12, name: 'Windows 95 UI Theme', category: 'ui', author: 'classic-roblox', downloads: 7600, version: '1.0', icon: '🖥️', preview: '#c0c0c0', files: ['content/textures/UI/Classic/TitleBar.png','content/textures/UI/Classic/Button.png','content/textures/UI/Classic/Scrollbar.png'], desc: 'Retro Windows 95-styled UI theme for Roblox from the classic Roblox community. Brings back the nostalgic gray UI with raised 3D buttons.', github: 'https://github.com/search?q=classic+roblox+ui', date: '2026-07-10' },
-    { id: 13, name: 'Minecraft Sounds Remix', category: 'sound', author: 'c418-community', downloads: 8900, version: '1.5', icon: '🔊', preview: '#22c55e', files: ['content/sounds/footstep_grass.mp3','content/sounds/dig_effect.mp3','content/sounds/place_effect.mp3','content/sounds/hurt_effect.mp3'], desc: 'Minecraft-inspired sound replacement pack from the crossover modding community. Iconic C418-style audio for Roblox. Fan-made tribute.', github: 'https://github.com/search?q=minecraft+sounds+roblox', date: '2026-07-22' },
-    { id: 14, name: 'Neon Glow Crosshairs', category: 'crosshair', author: 'discord/roblox-mods', downloads: 20700, version: '3.0', icon: '🎯', preview: '#f43f5e', files: ['content/textures/Crosshairs/NeonDot.png','content/textures/Crosshairs/NeonCross.png','content/textures/Crosshairs/NeonCircle.png','content/textures/Crosshairs/NeonArrow.png'], desc: 'Vibrant neon crosshair collection from the Roblox modding Discord community. 50 glowing designs optimized for visibility in bright and dark environments.', github: 'https://discord.gg/robloxmods', date: '2026-07-25' },
-    { id: 15, name: 'Fluent Mica Theme', category: 'theme', author: 'windows-community', downloads: 19800, version: '2.0', icon: '🎨', preview: '#0c4a6e', files: ['content/textures/UI/Mica/Accent.png','content/textures/UI/Mica/Background.png','content/textures/UI/Mica/Reveal.png','ClientSettings/ClientAppSettings.json'], desc: 'Windows 11 Fluent Design Mica theme for Roblox. Implements Mica backdrop, Acrylic panels and Reveal highlight effects throughout the interface.', github: 'https://github.com/search?q=roblox+fluent+theme', date: '2026-07-28' },
-    { id: 16, name: 'JetBrains Mono Font', category: 'font', author: 'JetBrains', downloads: 14500, version: '2.304', icon: '🔤', preview: '#ffffff', files: ['content/fonts/JetBrainsMono-Regular.ttf','content/fonts/JetBrainsMono-Bold.ttf','content/fonts/families/JetBrainsMono.json'], desc: 'JetBrains Mono font by JetBrains - a typeface for developers. Great for Roblox scripting UI. Licensed under Open Font License v1.1.', github: 'https://github.com/JetBrains/JetBrainsMono', date: '2026-07-05' },
-    { id: 17, name: 'Roblox 2015 Cursors', category: 'cursor', author: 'roblox-archive', downloads: 8100, version: '2.0', icon: '🖱️', preview: '#f97316', files: ['content/textures/Cursors/2015Arrow.png','content/textures/Cursors/2015Pointer.png','content/textures/Cursors/2018Arrow.png','content/textures/Cursors/2018Pointer.png'], desc: 'Classic Roblox cursor designs from 2015-2018 era, archived by the Roblox community preservation project.', github: 'https://github.com/roblox-archive/roblox-assets', date: '2026-07-18' },
-    { id: 18, name: 'Anime UI Collection', category: 'theme', author: 'weeb-mods', downloads: 16400, version: '4.1', icon: '🎨', preview: '#e11d48', files: ['content/textures/UI/Anime/Background.png','content/textures/UI/Anime/Buttons.png','content/textures/UI/Anime/Panels.png','ClientSettings/ClientAppSettings.json'], desc: 'Anime-themed UI collection from the Roblox weeb modding community. Multiple character-inspired color schemes with decorative UI elements.', github: 'https://github.com/search?q=roblox+anime+theme', date: '2026-07-14' },
-    { id: 19, name: 'No Texture Quality Drop', category: 'flag', author: 'maximumadhd', downloads: 42300, version: '1.0', icon: '⚙️', preview: '#8b5cf6', files: ['ClientSettings/ClientAppSettings.json'], desc: 'Essential FastFlag to prevent Roblox from auto-dropping texture quality. Originally discovered by maximumadhd. Keeps textures at maximum resolution always.', github: 'https://github.com/maximumadhd/Roblox-FPS-Unlocker', date: '2026-07-20' },
-    { id: 20, name: 'Cyclone Sound Pack', category: 'sound', author: 'r/robloxmodding', downloads: 5200, version: '1.0', icon: '🔊', preview: '#06b6d4', files: ['content/sounds/wind_ambient.mp3','content/sounds/rain_ambient.mp3','content/sounds/thunder.mp3','content/sounds/water_splash.mp3'], desc: 'Atmospheric environmental sound pack from the Roblox modding subreddit. Adds immersive weather ambience effects for enhanced gameplay.', github: 'https://www.reddit.com/r/robloxmodding/', date: '2026-07-12' }
+    {
+      id: 'cursor-2006', name: 'Classic Cursor Set (2006)', category: 'cursor',
+      author: 'Bloxstrap repository', sourceLabel: 'Upstream GitHub source', icon: '🖱️', preview: '#0ea5e9',
+      files: ['ArrowCursor.png', 'ArrowFarCursor.png'], status: 'Bundled in BoneFish',
+      source: 'https://github.com/bloxstraplabs/bloxstrap/tree/main/Bloxstrap/Resources/Mods/Cursor/From2006',
+      desc: 'The two 2006 cursor assets included by the upstream Bloxstrap project and bundled in this repository.'
+    },
+    {
+      id: 'cursor-2013', name: 'Classic Cursor Set (2013)', category: 'cursor',
+      author: 'Bloxstrap repository', sourceLabel: 'Upstream GitHub source', icon: '🖱️', preview: '#14b8a6',
+      files: ['ArrowCursor.png', 'ArrowFarCursor.png'], status: 'Bundled in BoneFish',
+      source: 'https://github.com/bloxstraplabs/bloxstrap/tree/main/Bloxstrap/Resources/Mods/Cursor/From2013',
+      desc: 'The two 2013 cursor assets included by the upstream Bloxstrap project and bundled in this repository.'
+    },
+    {
+      id: 'old-avatar', name: 'Old Avatar Background', category: 'place',
+      author: 'Bloxstrap repository', sourceLabel: 'Upstream GitHub source', icon: '🏗️', preview: '#10b981',
+      files: ['OldAvatarBackground.rbxl'], status: 'Bundled in BoneFish',
+      source: 'https://github.com/bloxstraplabs/bloxstrap/blob/main/Bloxstrap/Resources/Mods/OldAvatarBackground.rbxl',
+      downloadUrl: 'https://raw.githubusercontent.com/bloxstraplabs/bloxstrap/main/Bloxstrap/Resources/Mods/OldAvatarBackground.rbxl',
+      desc: 'The original place asset shipped by Bloxstrap for its old avatar background preset.'
+    },
+    {
+      id: 'old-sounds', name: 'Classic Character Sounds', category: 'sound',
+      author: 'Bloxstrap repository', sourceLabel: 'Upstream GitHub source', icon: '🔊', preview: '#f59e0b',
+      files: ['OldWalk.mp3', 'OldJump.mp3', 'OldGetUp.mp3', 'Empty.mp3'], status: 'Bundled in BoneFish',
+      source: 'https://github.com/bloxstraplabs/bloxstrap/tree/main/Bloxstrap/Resources/Mods/Sounds',
+      desc: 'The four sound assets used by the built-in classic character sounds preset.'
+    },
+    {
+      id: 'catmoji', name: 'Catmoji', category: 'font',
+      author: 'pizzaboxer / rbxcustom-fontemojis', sourceLabel: 'Community GitHub release', icon: '🐱', preview: '#ec4899',
+      files: ['Catmoji.ttf'], status: 'External asset',
+      source: 'https://github.com/bloxstraplabs/rbxcustom-fontemojis/releases/tag/my-phone-is-78-percent',
+      downloadUrl: 'https://github.com/bloxstraplabs/rbxcustom-fontemojis/releases/download/my-phone-is-78-percent/Catmoji.ttf',
+      desc: 'A real emoji font release used by BoneFish through its emoji preset support.'
+    },
+    {
+      id: 'emoji-windows-8', name: 'Windows 8.1 Emoji', category: 'font',
+      author: 'pizzaboxer / rbxcustom-fontemojis', sourceLabel: 'Community GitHub release', icon: '🔤', preview: '#6366f1',
+      files: ['Win8.1SegoeUIEmoji.ttf'], status: 'External asset',
+      source: 'https://github.com/bloxstraplabs/rbxcustom-fontemojis/releases/tag/my-phone-is-78-percent',
+      downloadUrl: 'https://github.com/bloxstraplabs/rbxcustom-fontemojis/releases/download/my-phone-is-78-percent/Win8.1SegoeUIEmoji.ttf',
+      desc: 'The Windows 8.1 emoji font published in the community release used by BoneFish.'
+    },
+    {
+      id: 'emoji-windows-10', name: 'Windows 10 Emoji', category: 'font',
+      author: 'pizzaboxer / rbxcustom-fontemojis', sourceLabel: 'Community GitHub release', icon: '🔤', preview: '#8b5cf6',
+      files: ['Win10April2018SegoeUIEmoji.ttf'], status: 'External asset',
+      source: 'https://github.com/bloxstraplabs/rbxcustom-fontemojis/releases/tag/my-phone-is-78-percent',
+      downloadUrl: 'https://github.com/bloxstraplabs/rbxcustom-fontemojis/releases/download/my-phone-is-78-percent/Win10April2018SegoeUIEmoji.ttf',
+      desc: 'The Windows 10 emoji font published in the community release used by BoneFish.'
+    },
+    {
+      id: 'emoji-windows-11', name: 'Windows 11 Emoji', category: 'font',
+      author: 'pizzaboxer / rbxcustom-fontemojis', sourceLabel: 'Community GitHub release', icon: '🔤', preview: '#a855f7',
+      files: ['Win1122H2SegoeUIEmoji.ttf'], status: 'External asset',
+      source: 'https://github.com/bloxstraplabs/rbxcustom-fontemojis/releases/tag/my-phone-is-78-percent',
+      downloadUrl: 'https://github.com/bloxstraplabs/rbxcustom-fontemojis/releases/download/my-phone-is-78-percent/Win1122H2SegoeUIEmoji.ttf',
+      desc: 'The Windows 11 emoji font published in the community release used by BoneFish.'
+    }
   ];
 
   // ============================================================
@@ -103,55 +146,46 @@
   }
 
   // ============================================================
-  // 5. COUNTER ANIMATION
+  // 5. REPOSITORY FACTS
   // ============================================================
 
-  function initCounters() {
-    const counters = qsa('.hero-stat-value');
-    if (!counters.length) return;
+  async function initRepoStats() {
+    const entries = qsa('[data-repo-stat]');
+    if (!entries.length) return;
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const target = parseInt(el.dataset.count, 10);
-          const suffix = target === 99 ? '%' : target === 12 ? 'K+' : '+';
-          animateCounter(el, target, suffix);
-          observer.unobserve(el);
-        }
-      });
-    }, { threshold: 0.5 });
+    const verifiedEntries = MODS.length;
+    const bundledEntries = MODS.filter(mod => mod.status === 'Bundled in BoneFish').length;
 
-    counters.forEach(c => observer.observe(c));
-  }
+    const setStat = (name, value) => {
+      entries.filter(entry => entry.dataset.repoStat === name)
+        .forEach(entry => { entry.textContent = value; });
+    };
 
-  function animateCounter(el, target, suffix) {
-    const duration = 2000;
-    const steps = 60;
-    const increment = target / steps;
-    let current = 0;
-    const start = performance.now();
+    setStat('entries', verifiedEntries);
+    setStat('bundled', bundledEntries);
 
-    function update(now) {
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / duration, 1);
-      // Ease out cubic
-      const eased = 1 - Math.pow(1 - progress, 3);
+try {
+      const [repoResponse, releaseResponse] = await Promise.all([
+        fetch('https://api.github.com/repos/BoneFishStudio/BoneFish', {
+          headers: { Accept: 'application/vnd.github+json' }
+        }),
+        fetch('https://api.github.com/repos/BoneFishStudio/BoneFish/releases/latest', {
+          headers: { Accept: 'application/vnd.github+json' }
+        })
+      ]);
+      if (!repoResponse.ok) throw new Error(`GitHub returned ${repoResponse.status}`);
 
-      if (target === 99) {
-        el.textContent = Math.round(eased * target) + suffix;
-      } else {
-        el.textContent = Math.floor(eased * target) + suffix;
+      const repository = await repoResponse.json();
+      setStat('stars', repository.stargazers_count);
+
+      if (releaseResponse.ok) {
+        const release = await releaseResponse.json();
+        setStat('release', release.tag_name);
       }
-
-      if (progress < 1) {
-        requestAnimationFrame(update);
-      } else {
-        el.textContent = target + suffix;
-      }
+    } catch (error) {
+      console.warn('Repository stats unavailable:', error);
+      setStat('stars', '—');
     }
-
-    requestAnimationFrame(update);
   }
 
   // ============================================================
@@ -181,7 +215,7 @@
     const container = document.getElementById('featuredMods');
     if (!container) return;
 
-    // Show first 6 mods
+    // Show a small, source-backed selection rather than invented popularity data.
     const featured = MODS.slice(0, 6);
     container.innerHTML = '';
 
@@ -195,13 +229,13 @@
         <div class="mod-card-body">
           <span class="mod-card-category">${mod.category}</span>
           <h4>${mod.name}</h4>
-          <p>${mod.desc.substring(0, 80)}...</p>
+          <p>${mod.desc.substring(0, 90)}${mod.desc.length > 90 ? '...' : ''}</p>
           <div class="mod-card-footer">
             <span class="mod-card-author">
               <span class="mod-card-author-avatar">${mod.author[0]}</span>
               ${mod.author}
             </span>
-            <span class="mod-card-downloads">⬇️ ${(mod.downloads / 1000).toFixed(1)}K</span>
+            <span class="mod-card-status">${mod.status}</span>
           </div>
         </div>
       `;
@@ -268,13 +302,13 @@
         <div class="mod-card-body">
           <span class="mod-card-category">${mod.category}</span>
           <h4>${mod.name}</h4>
-          <p>${mod.desc.substring(0, 90)}...</p>
+          <p>${mod.desc.substring(0, 100)}${mod.desc.length > 100 ? '...' : ''}</p>
           <div class="mod-card-footer">
             <span class="mod-card-author">
               <span class="mod-card-author-avatar">${mod.author[0]}</span>
               ${mod.author}
             </span>
-            <span class="mod-card-downloads">⬇️ ${(mod.downloads / 1000).toFixed(1)}K</span>
+            <span class="mod-card-status">${mod.status}</span>
           </div>
         </div>
       `;
@@ -322,9 +356,9 @@
     document.getElementById('modalCategory').textContent = categoryIcon(mod.category) + ' ' + capitalize(mod.category);
     document.getElementById('modalDesc').textContent = mod.desc;
     document.getElementById('modalAuthor').textContent = mod.author;
-    document.getElementById('modalDownloads').textContent = mod.downloads.toLocaleString();
+    document.getElementById('modalSourceLabel').textContent = mod.sourceLabel;
     document.getElementById('modalCategoryMeta').textContent = capitalize(mod.category);
-    document.getElementById('modalVersion').textContent = 'v' + mod.version;
+    document.getElementById('modalStatus').textContent = mod.status;
 
     // Files
     const filesList = document.getElementById('modalFilesList');
@@ -337,16 +371,18 @@
 
     // Download button
     const downloadBtn = document.getElementById('modalDownloadBtn');
-    if (mod.github) {
-      downloadBtn.href = mod.github;
+    if (mod.downloadUrl) {
+      downloadBtn.href = mod.downloadUrl;
+      downloadBtn.style.display = 'inline-flex';
     } else {
       downloadBtn.href = '#';
-      downloadBtn.textContent = '⬇️ Download ZIP';
+      downloadBtn.style.display = 'none';
     }
 
     const githubBtn = document.getElementById('modalGithubBtn');
-    if (mod.github) {
-      githubBtn.href = mod.github;
+    if (mod.source) {
+      githubBtn.href = mod.source;
+      githubBtn.textContent = '📂 View source';
       githubBtn.style.display = 'inline-flex';
     } else {
       githubBtn.style.display = 'none';
@@ -434,7 +470,7 @@
   function init() {
     initNav();
     initParticles();
-    initCounters();
+    initRepoStats();
     initReveal();
     initFeaturedMods();
 

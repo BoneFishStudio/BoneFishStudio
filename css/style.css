@@ -2,8 +2,22 @@
    BONEFISH — Complete Website Stylesheet
    ============================================================ */
 
-/* Google Fonts - Inter */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+/* Use the same local type family as the desktop app; no external font request. */
+@font-face {
+  font-family: 'BoneFish Sans';
+  src: url('../assets/fonts/Rubik-VariableFont_wght.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BoneFish Mono';
+  src: url('../assets/fonts/JetBrainsMono-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
 
 /* --- CSS Variables --- */
 :root {
@@ -40,8 +54,8 @@
   --shadow-lg: 0 8px 48px rgba(0, 0, 0, 0.5);
   --shadow-glow: 0 0 40px var(--accent-glow);
   
-  --font: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', monospace;
+  --font: 'BoneFish Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'BoneFish Mono', 'Cascadia Code', 'Fira Code', monospace;
   
   --nav-height: 72px;
   --max-width: 1280px;
@@ -318,6 +332,15 @@ button { cursor: pointer; font-family: inherit; }
   text-align: center;
 }
 
+.hero-kicker {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  margin-bottom: 18px;
+  animation: fadeInUp 0.6s ease both;
+}
+
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -347,7 +370,7 @@ button { cursor: pointer; font-family: inherit; }
 
 .hero h1 {
   font-size: clamp(2.5rem, 6vw, 4.5rem);
-  font-weight: 800;
+  font-weight: 650;
   line-height: 1.1;
   margin-bottom: 20px;
   background: linear-gradient(135deg, #f0f4ff 0%, var(--accent-light) 100%);
@@ -385,7 +408,7 @@ button { cursor: pointer; font-family: inherit; }
 
 .hero-stat-value {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--accent);
 }
 
@@ -630,6 +653,12 @@ button { cursor: pointer; font-family: inherit; }
   display: flex;
   align-items: center;
   gap: 4px;
+}
+
+.mod-card-status {
+  color: var(--accent);
+  font-size: 0.72rem;
+  text-align: right;
 }
 
 /* --- Download Section --- */
@@ -1356,33 +1385,4 @@ button { cursor: pointer; font-family: inherit; }
 
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* --- v7.0.5: Release badge in hero --- */
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin: 20px 0 32px;
-  padding: 8px 18px;
-  background: linear-gradient(135deg, rgba(6, 182, 212, 0.14), rgba(8, 145, 178, 0.08));
-  border: 1px solid rgba(6, 182, 212, 0.35);
-  border-radius: 100px;
-  color: var(--accent-light);
-  font-size: 0.9rem;
-  font-weight: 500;
-  backdrop-filter: blur(6px);
-  animation: heroPulse 3s ease-in-out infinite;
-}
-
-.hero-badge strong {
-  color: var(--text-primary);
-  font-weight: 700;
-}
-
-@keyframes heroPulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.25); }
-  50% { box-shadow: 0 0 22px 2px rgba(6, 182, 212, 0.35); }
-}
-
 @media (max-width: 640px) {
-  .hero-badge { font-size: 0.78rem; padding: 6px 12px; }
-}

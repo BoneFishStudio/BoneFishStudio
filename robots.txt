@@ -1,8 +1,8 @@
 # robots.txt for BoneFish Website
-# https://bonefishstudioo.vercel.app
+# https://bonefishstudio.vercel.app
 
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://bonefishstudioo.vercel.app/sitemap.xml
+Sitemap: https://bonefishstudio.vercel.app/sitemap.xml
